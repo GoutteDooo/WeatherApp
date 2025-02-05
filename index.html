@@ -9,16 +9,17 @@
     <div class="app">
       <h1>Weather App</h1>
       <div class="weather">
-        <h2 id="weather--town">La météo à Valenciennes</h2>
+        <h2 id="weather--town">La météo à</h2>
+        <p id="weather--date"></p>
         <img
           src="https://cdn.weatherapi.com/v1/static/weather/logo/02n.png"
           alt="Logo météo"
         />
-        <p id="weather--temp">Température : <span>25°C</span></p>
-        <p id="weather--humidity">Humidité : <span>40%</span></p>
-        <p id="weather--wind">Vent : <span>5km/h</span></p>
+        <p>Température : <span id="weather--temp"></span></p>
+        <p>Humidité : <span id="weather--humidity"></span></p>
+        <p>Vent : <span id="weather--wind"></span></p>
       </div>
-      <script src="index.js"></script>
+      <script type="module" src="meteo.js"></script>
     </div>
   </body>
 </html>
