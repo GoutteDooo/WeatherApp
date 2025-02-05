@@ -11,8 +11,11 @@ const updateDate = () => {
   const DAY = DATE.getDate();
   const MONTH = DATE.getMonth() + 1;
   const YEAR = DATE.getFullYear();
-  const HOURS = DATE.getHours();
-  DATE_ELEMENT.textContent = `Nous sommes le ${DAY}/${MONTH}/${YEAR} et il est ${HOURS} heures`;
+  const HOURS = DATE.toLocaleString("fr-FR", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  DATE_ELEMENT.textContent = `Nous sommes le ${DAY}/${MONTH}/${YEAR} et il est ${HOURS}`;
 };
 
 function main() {
