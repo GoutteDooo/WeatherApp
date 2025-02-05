@@ -4,19 +4,16 @@ const DATE_ELEMENT = document.querySelector("#weather--date");
 const TEMP_ELEMENT = document.querySelector("#weather--temp");
 const HUMIDITY_ELEMENT = document.querySelector("#weather--humidity");
 const WIND_ELEMENT = document.querySelector("#weather--wind");
+let townName, temp, humidity, wind, conf;
 
-//Connaître la date
-const DATE = new Date();
-const DAY = DATE.getDate();
-const MONTH = DATE.getMonth() + 1;
-const YEAR = DATE.getFullYear();
-const HOURS = DATE.getHours();
-DATE_ELEMENT.textContent += `Nous sommes le ${DAY}/${MONTH}/${YEAR} et il est ${HOURS} heures`;
-let townName = "";
-let temp;
-let humidity;
-let wind;
-let conf;
+const updateDate = () => {
+  const DATE = new Date();
+  const DAY = DATE.getDate();
+  const MONTH = DATE.getMonth() + 1;
+  const YEAR = DATE.getFullYear();
+  const HOURS = DATE.getHours();
+  DATE_ELEMENT.textContent = `Nous sommes le ${DAY}/${MONTH}/${YEAR} et il est ${HOURS} heures`;
+};
 
 function main() {
   //Récupérer le fichier de configuration
@@ -58,6 +55,7 @@ function main() {
               TEMP_ELEMENT.textContent = `${temp}`;
               HUMIDITY_ELEMENT.textContent = `${humidity}`;
               WIND_ELEMENT.textContent = `${wind}`;
+              updateDate();
             });
         })
         .catch((err) =>
