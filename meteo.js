@@ -11,7 +11,7 @@ const DAY = DATE.getDate();
 const MONTH = DATE.getMonth() + 1;
 const YEAR = DATE.getFullYear();
 const HOURS = DATE.getHours();
-DATE_ELEMENT.textContent += `Nous sommes le ${DAY} du mois de ${MONTH} et il est ${HOURS}`;
+DATE_ELEMENT.textContent += `Nous sommes le ${DAY}/${MONTH}/${YEAR} et il est ${HOURS} heures`;
 let townName = "";
 let temp;
 let humidity;
@@ -66,6 +66,6 @@ function main() {
     });
 }
 
-const oneHour = 1000 * 60 * 60;
-setInterval(main, oneHour);
+const refreshment = 1000 * 60 * 60;
+setInterval(main, refreshment);
 main();
